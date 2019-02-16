@@ -13,7 +13,7 @@
   "author": "lif3ng <lif3ng@icoud.com>",
   "homepage": "https://github.com/lif3ng/local-npm-server",
   "license": "MIT",
-  "main": "lib/cli.js",
+  "main": "bin/cli.js",
   "files": [
     "lib",
     "bin",
@@ -28,7 +28,7 @@
     "url": "git+https://github.com/lif3ng/local-npm-server.git"
   },
   "scripts": {
-    "dev": "nodemon lib/cli"
+    "dev": "supervisor ./bin/cli.js"
   },
   "bugs": {
     "url": "https://github.com/lif3ng/local-npm-server/issues"
@@ -38,6 +38,7 @@
     "inquirer": "^6.2.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "supervisor": "^0.12.0"
   }
 }

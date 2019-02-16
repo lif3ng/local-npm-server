@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 var inquirer = require('inquirer');
-var add_registry = require('../lib/add_registry')
-var clear_registry = require('../lib/clear_registry')
+var addRegistry = require('../lib/add_registry')
+var chooseRegistry = require('../lib/choose_registry')
+var setRegistry = require('../lib/set_registry')
 
 var getAnswer = async () => (
   await inquirer
@@ -13,9 +14,11 @@ var getAnswer = async () => (
         choices: [
           { name: 'start local npm server & set npm/yarn registry', value: 'default' },
           { name: 'add registry preset', value: 'add_registry' },
+          { name: 'choose registry', value: 'choose_registry' },
           { name: 'clear registry configuration', value: 'clear_registry' }
         ],
-        default: 'add_registry'
+        default: 'set_registry',
+        // default: 'add_registry',
       }
     ]))
 
@@ -26,18 +29,13 @@ getAnswer().then(
         add_registry()
         break;
       case 'clear_registry':
-        clear_registry()
+        setRegistry(null)
+        break;
+      case 'choose_registry':
+        chooseRegistry()
         break;
       default:
 
     }
   }
 )
-
-
-
-module.exports = cli;
-
-function cli() {
-  // TODO
-}

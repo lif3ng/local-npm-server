@@ -11,12 +11,12 @@ module.exports = () => {
       name: 'url',
       message: 'registry URL',
       type: 'input',
-      validate:function (val) {
+      validate: function (val) {
         const done = this.async();
-        if(!val){
-          done('please input name',false)
+        if (!val) {
+          done('please input name', false)
         }
-        done(null,true)
+        done(null, true)
       }
     },
     {
@@ -24,12 +24,12 @@ module.exports = () => {
       message: 'registry show name',
       validate: function (val) {
         const done = this.async();
-        if(!val){
-          done('please input name',false)
+        if (!val) {
+          done('please input name', false)
         }
         filePath = path.join(__dirname, `../registry_preset/${val}.json`)
         if (fs.existsSync(filePath)) {
-          done(`'${val}' is exists, please input another name`,false)
+          done(`'${val}' is exists, please input another name`, false)
           // return false
         }
         done(null, true)
@@ -37,8 +37,8 @@ module.exports = () => {
       }
     }
   ]).then(({ url, name }) => {
-    fs.writeFileSync(filePath, JSON.stringify({url}))
-  }).then(()=>{
+    fs.writeFileSync(filePath, JSON.stringify({ url }))
+  }).then(() => {
     console.log('done')
   })
 }
