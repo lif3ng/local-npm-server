@@ -1,0 +1,43 @@
+{
+  "name": "@local-npm-server/cli",
+  "version": "0.0.1",
+  "description": "local-npm-server CLI tools.",
+  "bin": {
+    "lns": "bin/cli.js"
+  },
+  "keywords": [
+    "npm",
+    "cli",
+    "mirror"
+  ],
+  "author": "lif3ng <lif3ng@icoud.com>",
+  "homepage": "https://github.com/lif3ng/local-npm-server",
+  "license": "MIT",
+  "main": "lib/cli.js",
+  "files": [
+    "lib",
+    "bin",
+    "registry_preset"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lif3ng/local-npm-server.git"
+  },
+  "scripts": {
+    "dev": "nodemon lib/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/lif3ng/local-npm-server/issues"
+  },
+  "dependencies": {
+    "command-exists": "^1.2.8",
+    "inquirer": "^6.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
