@@ -1,10 +1,9 @@
-'use strict';
-
+#!/usr/bin/env node
 var inquirer = require('inquirer');
 var add_registry = require('../lib/add_registry')
 var clear_registry = require('../lib/clear_registry')
 
-const getAnswer = async () => (
+var getAnswer = async () => (
   await inquirer
     .prompt([
       {
