@@ -2,6 +2,7 @@ const { execSync } = require('child_process');
 var commandExists = require('command-exists').sync;
 
 const getRegistry = (buf) => buf.toString().replace('\n', '')
+
 module.exports = (registry) => {
   const cmds = ['npm', 'yarn']
   cmds.forEach((cmd) => {
@@ -9,10 +10,8 @@ module.exports = (registry) => {
       const oldRegistry = getRegistry(execSync(`${cmd} config get registry`))
 
       if (registry) {
-        console.log(`${cmd} config set registry ${registry}`)
         execSync(`${cmd} config set registry ${registry}`)
       } else {
-        console.log(`${cmd} config delete registry`)
         execSync(`${cmd} config delete registry`);
       }
 
