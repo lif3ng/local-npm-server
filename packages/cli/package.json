@@ -1,6 +1,6 @@
 {
   "name": "@local-npm-server/cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "local-npm-server CLI tools.",
   "bin": {
     "lns": "bin/cli.js"
